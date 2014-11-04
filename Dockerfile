@@ -14,13 +14,12 @@ RUN apt-get install make
 # install compass
 RUN gem install --no-rdoc --no-ri compass
 
-WORKDIR /srv
-
 # set default umask to 002
 ADD ./root/etc/profile /etc/profile
 ADD ./root/docker-umask-wrapper.sh /bin/docker-umask-wrapper.sh
 
 RUN chmod u+x /bin/docker-umask-wrapper.sh
 RUN mkdir /src
+WORKDIR /src
 
-CMD docker-umask-wrapper.sh compass watch /src
+CMD docker-umask-wrapper.sh compass watch
