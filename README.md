@@ -12,7 +12,7 @@ You can run
     $ docker run -ti -v `pwd`:/srv marmelab/compass build
 
 ## Dockerenv
-The below configuration will compile the source code within /src.  Just mount the dir containing your SASS files and it will watch for any changes and recompile
+The below configuration will look for `config.rb` inside the `/src` dir and compile code according to the config upon file changes.
 
 ### fig yaml config
 ```yml
@@ -23,3 +23,9 @@ compass:
   ports:
     - "5555"
 ```
+
+## Other reading
+* https://blog.gaya.ninja/articles/how-to-start-using-sass-and-compass-in-10-minutes/
+* http://compass-style.org/
+
+
